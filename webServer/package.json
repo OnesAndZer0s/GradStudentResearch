@@ -1,0 +1,18 @@
+{
+  "name": "webserver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "tsc --watch"
+  },
+  "author": "Tayler Miller <taylermiller360@gmail.com> (https://github.com/OnesAndZer0s)",
+  "license": "GNU",
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.5.4"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
