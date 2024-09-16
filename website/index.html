@@ -5,11 +5,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Homepage</title>
+  <link rel="stylesheet" href="./index.css">
 </head>
 
+
 <body>
-  <p>Hello, world</p>
-  <script type="module" src="./out/web/index.js"></script>
+  <!-- The left panel -->
+  <div id="leftPanel">
+    <button>LOGIN</button>
+    <!-- this should be hidden if there is nobody logged in. otherwise, show the name -->
+    <p>USERNAME</p>
+    <hr>
+    <h1>TOOLS</h1>
+    <h2>Dashboard</h2>
+    <h2>Add New Sensor</h2>
+    <hr>
+    <h1>PATIENTS</h1>
+    <!-- this is purposely hardcoded for now -->
+    <h2>Patient 1</h2>
+  </div>
+  <script type="module" src="./out/index.js"></script>
 </body>
 
 </html>
