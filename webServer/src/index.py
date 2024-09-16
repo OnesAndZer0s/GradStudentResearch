@@ -7,11 +7,6 @@ SERVER_PORT = 5000
 class ServerHandler(socketserver.BaseRequestHandler):
     def handle(self):
         self.data = self.request.recv(1024).strip()
-        # print("{} wrote:".format(self.client_address[0]))
-        # print(self.data)
-        # self.request.sendall(self.data.upper())
-        # if get request, send the index.html file
-        
         fin = open("../website/index.html")
         self.request.sendall(('HTTP/1.0 200 OK\n\n' + fin.read()).encode())
         fin.close()
@@ -38,15 +33,12 @@ def main():
         print("Server loop running in thread:", server_thread.name)
         server_thread.join()
         other_thread.join()
-    except KeyboardInterrupt:
+    except KeyboardInterrupt: # this is needed to stop the server
         print("Shutting down server")
         webServer.shutdown()
         webServer.server_close()
         dataSocket.shutdown()
         dataSocket.server_close()
-
-    
-    # server.serve_forever()
 
 if __name__ == "__main__":
     main()

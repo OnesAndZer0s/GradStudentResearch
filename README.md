@@ -6,7 +6,8 @@
 ---
 1. [How to Run](#how_to_run)
    1. [Download Dependencies](#download_dependencies)
-   2. [Running](#running)
+   2. [Building](#building)
+   3. [Running](#running)
 2. ETC
 3. ETC
 4. [Links](#links)
@@ -15,27 +16,32 @@
 ---
 ### Downloading Dependencies <a name="download_dependencies"></a>
 
-#### Python
+#### Data Gatherer
 ```bash
 cd dataGatherer && pip install -r requirements.txt
 ```
 
-#### Node.js
+#### Website
 ```bash
-cd webApp && npm install
+cd website && npm install
 ```
 <br>
 
-### Running <a name="Running"></a>
+### Building <a name="building"></a>
+```bash
+cd website && npm run build
+```
+<br>
 
-#### Python
+### Running <a name="running"></a>
+
+#### Data Gatherer
 ```bash
 cd dataGatherer && python index.py
 ```
-
-#### Node.js
+#### Web Server
 ```bash
-cd webApp && npm start
+cd webServer && python index.py
 ```
 
 ## Links <a name="links"></a>
