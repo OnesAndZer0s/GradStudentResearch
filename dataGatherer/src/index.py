@@ -1,22 +1,24 @@
 import socket
+import time
 import mmWave as mm
+import asyncio
 
+
+from serialNumber import *
+
+UID = getserial()
 SERVER_IP= "127.0.0.1"
-SERVER_PORT = 5000
+SERVER_PORT = 5001
 
 
+async def main():
+    s = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
+    s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+    s.bind(('', 4242))
 
-def main():
-    # Create a socket object
-    s = socket.socket()
-    # connect to the server
+    # s.bind((SERVER_IP, SERVER_PORT))
     s.connect((SERVER_IP, SERVER_PORT))
+    for i in range(10):
+        s.send("Hello".encode())
 
-    # Send the data to the server
-    s.send(b"Hello server!")
-
-    # Receive the data from the server
-    print(s.recv(1024))
-
-    # Close the connection
-    s.close()
+asyncio.run(main())
